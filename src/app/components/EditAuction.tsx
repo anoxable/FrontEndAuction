@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { FaTrash } from 'react-icons/fa';
-import DatePicker from '../assets/DatePicker.png';
+import DatePicker from '../assets/datePicker.png';
 import { Auction } from '../../types/Auction';
 
 interface EditAuctionProps {
