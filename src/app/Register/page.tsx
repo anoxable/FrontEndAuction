@@ -32,7 +32,7 @@ export default function RegisterPage() {
     setIsLoading(true);
     
     try {
-      const response = await fetch('http://localhost:3001/users/signup', {
+      const response = await fetch('https://auctionbaybackend.onrender.com/users/signup', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
