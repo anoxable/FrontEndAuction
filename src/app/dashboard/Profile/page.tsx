@@ -24,11 +24,11 @@ export default function ProfilePage() {
     try {
       let url = '';
       if (selectedTab === 'Bidding') {
-        url = 'http://localhost:3001/auctions/user/bids';
+        url = 'https://auctionbaybackend-production.up.railway.app/auctions/user/bids';
       } else if (selectedTab === 'My auctions') {
-        url = `http://localhost:3001/auctions/user/${userData?.id || user?.id}`;
+        url = `https://auctionbaybackend-production.up.railway.app1/auctions/user/${userData?.id || user?.id}`;
       } else if (selectedTab === 'Won') {
-        url = `http://localhost:3001/auctions/user/bids/won`;
+        url = `https://auctionbaybackend-production.up.railway.app/auctions/user/bids/won`;
       }
 
       if (!url) return;
@@ -64,7 +64,7 @@ export default function ProfilePage() {
       try {
         await refreshAccessToken(); // Uncomment if needed
   
-        const response = await fetch('http://localhost:3001/auth/me', {
+        const response = await fetch('https://auctionbaybackend-production.up.railway.app/auth/me', {
           method: 'GET', // Use GET if fetching data
           credentials: 'include',
         });
