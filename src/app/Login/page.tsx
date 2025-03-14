@@ -22,7 +22,7 @@ export default function LoginPage() {
     setIsLoading(true);
     
     try {
-      const response = await fetch('https://auctionbaybackend.onrender.com/auth/login', {
+      const response = await fetch('https://auctionbaybackend-production.up.railway.app/auth/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
