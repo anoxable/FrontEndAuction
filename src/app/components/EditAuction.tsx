@@ -66,7 +66,7 @@ const EditAuction: React.FC<EditAuctionProps> = ({ isOpen, onClose, auction }) =
 
     try {
       console.log(auction);
-      const response = await fetch(`http://localhost:3001/auctions/${auction.id}`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/auctions/${auction.id}`, {
         method: 'PUT',
         credentials: 'include',
         body: formData,

@@ -65,7 +65,7 @@ const CreateAuction: React.FC<CreateAuctionProps> = ({ isOpen, onClose, user }) 
 
     try {
       await refreshAccessToken(); 
-      const response = await fetch('http://localhost:3001/auctions', {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/auctions`, {
         method: 'POST',
         credentials: 'include',
         body: formData,

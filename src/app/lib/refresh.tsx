@@ -1,6 +1,6 @@
 export async function refreshAccessToken() {
     try {
-      const response = await fetch('http://localhost:3001/auth/refresh-token', {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/auth/refresh-token`, {
         method: 'POST',
         credentials: 'include',  
       });

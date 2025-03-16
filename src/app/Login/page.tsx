@@ -22,13 +22,13 @@ export default function LoginPage() {
     setIsLoading(true);
     
     try {
-      const response = await fetch('https://auctionbaybackend-production.up.railway.app/auth/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email, password }),
-        credentials: 'include',
+      const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/auth/login`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email, password }),
+      credentials: 'include',
       });
 
       if (response === null) {

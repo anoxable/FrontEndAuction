@@ -28,7 +28,7 @@ export default function AuctionDetailPage() {
       setLoading(true);
       try {
         const userResponse = await fetchWithAuth<{ user: User }>({
-          url: 'http://localhost:3001/auth/me', 
+          url: `${process.env.NEXT_PUBLIC_BACKEND_URL}/auth/me`, 
           method: 'GET', 
           headers: {
          
@@ -51,10 +51,11 @@ export default function AuctionDetailPage() {
     };
 
     const fetchAuctionDetails = async () => {
+      setLoading(true);
        console.log('yo')
       try {
         
-        const response = await fetch(`http://localhost:3001/auctions/${params.id}`, {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/auctions/${params.id}`, {
           method: 'GET',
           credentials: 'include',
           headers: {
@@ -90,7 +91,7 @@ export default function AuctionDetailPage() {
     }
 
     try {
-      const response = await fetch(`http://localhost:3001/auctions/${params.id}/bid`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/auctions/${params.id}/bid`, {
         method: 'POST',
         credentials: 'include',
         headers: {
@@ -135,7 +136,7 @@ export default function AuctionDetailPage() {
 
   if (loading) return <div><AuctionSkeleton/></div>;
   if (error) return <div>Error: {error}</div>;
-  if (!auction) return <div>Auction not found</div>;
+  if (!auction) return <div><AuctionSkeleton/></div>;
 
   return (
 

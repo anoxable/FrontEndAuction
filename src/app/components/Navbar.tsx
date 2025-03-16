@@ -30,7 +30,7 @@ const Navbar = () => {
   useEffect(() => {
     async function fetchUserData() {
       try {
-        const response = await fetchWithAuth<{ user: User }>({ url: "http://localhost:3001/auth/me" });
+        const response = await fetchWithAuth<{ user: User }>({ url: `${process.env.NEXT_PUBLIC_BACKEND_URL}/auth/me` });
         if (response.user) {
           setUser(response.user);
           console.log(response.user)

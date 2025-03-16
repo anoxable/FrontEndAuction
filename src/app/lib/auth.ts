@@ -17,7 +17,7 @@ async function refreshToken() {
 
   isRefreshing = true;
   
-  refreshPromise = fetch('http://localhost:3001/auth/refresh-token', {
+  refreshPromise = fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/auth/refresh-token`, {
     method: 'POST',
     credentials: 'include',  // Important for cookies
   }).then(response => {

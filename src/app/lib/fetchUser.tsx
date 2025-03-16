@@ -27,7 +27,7 @@ export const fetchUser = async (): Promise<User | null> => {
     }
 
     // Fetch with the token in the headers
-    const response = await fetch('http://localhost:3001/auth/me', {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/auth/me`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',

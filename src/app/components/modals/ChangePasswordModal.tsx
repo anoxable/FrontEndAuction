@@ -33,7 +33,7 @@ const ChangePasswordModal: React.FC<ChangePasswordModalProps> = ({ isOpen, onClo
     setError(null); // Clear error if passwords match
   
     try {
-      const response = await fetch('http://localhost:3001/users/me/update-password', {
+      const response = await fetch('${process.env.NEXT_PUBLIC_BACKEND_URL}/users/me/update-password', {
         method: 'PUT',
         credentials: 'include',
         headers: { 'Content-Type': 'application/json' },

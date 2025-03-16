@@ -24,11 +24,11 @@ export default function ProfilePage() {
     try {
       let url = '';
       if (selectedTab === 'Bidding') {
-        url = 'https://auctionbaybackend-production.up.railway.app/auctions/user/bids';
+        url = `${process.env.NEXT_PUBLIC_BACKEND_URL}/auctions/user/bids`;
       } else if (selectedTab === 'My auctions') {
-        url = `https://auctionbaybackend-production.up.railway.app1/auctions/user/${userData?.id || user?.id}`;
+        url = `${process.env.NEXT_PUBLIC_BACKEND_URL}/auctions/user/${userData?.id || user?.id}`;
       } else if (selectedTab === 'Won') {
-        url = `https://auctionbaybackend-production.up.railway.app/auctions/user/bids/won`;
+        url = `${process.env.NEXT_PUBLIC_BACKEND_URL}/auctions/user/bids/won`;
       }
 
       if (!url) return;
@@ -64,7 +64,7 @@ export default function ProfilePage() {
       try {
         await refreshAccessToken(); // Uncomment if needed
   
-        const response = await fetch('https://auctionbaybackend-production.up.railway.app/auth/me', {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/auth/me`, {
           method: 'GET', // Use GET if fetching data
           credentials: 'include',
         });
@@ -97,7 +97,7 @@ export default function ProfilePage() {
   const handleDeleteAuction =async (id:number) => {
     // Implement delete logic here
     try {
-      const response = await fetch (`http://localhost:3001/auctions/${id}`, {
+      const response = await fetch (`${process.env.NEXT_PUBLIC_BACKEND_URL}/auctions/${id}`, {
         method: 'DELETE',
         credentials: 'include',
         headers: {

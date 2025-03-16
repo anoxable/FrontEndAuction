@@ -36,7 +36,7 @@ const ChangeProfilePictureModal: React.FC<ChangeProfilePictureModalProps> = ({ i
     formData.append('image', image);
 
     try {
-      const response = await fetch('http://localhost:3001/users/profile-picture', {
+      const response = await fetch('${process.env.NEXT_PUBLIC_BACKEND_URL}/users/profile-picture', {
         method: 'POST',
         credentials: 'include',
         body: formData,

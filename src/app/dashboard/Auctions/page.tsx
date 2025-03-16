@@ -22,7 +22,7 @@ export default function AuctionsPage() {
     const fetchUserData = async () => {
       setLoading(true);
       try {
-        const response = await fetch('http://localhost:3001/auth/me', {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/auth/me`, {
           method: 'GET',
           credentials: 'include',
           headers: {
@@ -51,10 +51,10 @@ export default function AuctionsPage() {
     const fetchAuctions = async (filterType: string) => {
       try {
         await refreshAccessToken();
-        let url = 'http://localhost:3001/auctions/active';
+        let url = `${process.env.NEXT_PUBLIC_BACKEND_URL}/auctions/active`;
         
         if (filterType === 'bidding' && user?.id) {
-          url = `http://localhost:3001/auctions/user/bids`;
+          url = `${process.env.NEXT_PUBLIC_BACKEND_URL}/auctions/user/bids`;
         }
 
         const response = await fetch(url, {
