@@ -44,7 +44,7 @@ export default function LandingPage() {
 
       {/* Main Content */}
       <main className="flex-grow flex flex-col items-center justify-center text-center px-4">
-        <h1 className="text-6xl text-black font-bold mb-4">E-auctions made easy!</h1>
+        <h1 className="text-4xl md:text-6xl text-black font-bold mb-4">E-auctions made easy!</h1>
         <p className="text-base mb-8 text-black font-light">
           Simple way for selling your unused products, or <br /> getting a deal on product you want!
         </p>
