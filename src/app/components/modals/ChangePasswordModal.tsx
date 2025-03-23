@@ -62,7 +62,7 @@ const ChangePasswordModal: React.FC<ChangePasswordModalProps> = ({ isOpen, onClo
         <h2 className="text-xl font-bold text-black mb-4">Change Password</h2>
 
         <div className="mb-4 relative">
-          <label className="block mb-1 text-textPrimary">Current Password</label>
+          <label className="block mb-1 font-light text-textPrimary">Current Password</label>
           <div className='relative'>
             <input
               type={showCurrentPassword ? 'text' : 'password'}
@@ -81,7 +81,7 @@ const ChangePasswordModal: React.FC<ChangePasswordModalProps> = ({ isOpen, onClo
         </div>
 
         <div className="mb-4 relative">
-          <label className="block mb-1 text-textPrimary">New Password</label>
+          <label className="block mb-1 font-light text-textPrimary">New Password</label>
           <div className='relative'>
             <input
               type={showNewPassword ? 'text' : 'password'}
@@ -100,7 +100,7 @@ const ChangePasswordModal: React.FC<ChangePasswordModalProps> = ({ isOpen, onClo
         </div>
 
         <div className="mb-4 relative">
-          <label className="block mb-1 text-textPrimary">Confirm New Password</label>
+          <label className="block mb-1 font-light text-textPrimary">Confirm New Password</label>
           <div className="relative">
             <input
               type={showConfirmPassword ? 'text' : 'password'}
@@ -125,13 +125,13 @@ const ChangePasswordModal: React.FC<ChangePasswordModalProps> = ({ isOpen, onClo
 
         <div className="flex justify-end">
           <button 
-            className="mr-2 bg-gray-300 text-textPrimary rounded-2xl p-2 px-4" 
+            className=" font-medium mr-2 bg-gray-300 text-textPrimary rounded-2xl p-2 px-4" 
             onClick={onClose}
           >
             Cancel
           </button>
           <button 
-            className={`bg-primary text-textPrimary rounded-md px-4 py-2 ${
+            className={`bg-primary font-medium text-textPrimary rounded-md px-4 py-2 ${
               newPassword !== confirmPassword ? 'opacity-50 cursor-not-allowed' : ''
             }`} 
             onClick={handleChangePassword}

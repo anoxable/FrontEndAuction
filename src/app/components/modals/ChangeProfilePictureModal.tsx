@@ -58,10 +58,10 @@ const ChangeProfilePictureModal: React.FC<ChangeProfilePictureModalProps> = ({ i
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-20">
-      <div className="bg-white rounded-lg p-6 w-96">
-        <h2 className="text-xl font-bold text-black mb-4">Change Profile Picture</h2>
+      <div className="bg-white rounded-lg p-4 w-80">
+        <h2 className="text-2xl font-bold text-black mb-4">Change Profile Picture</h2>
         <div className="mb-6 relative">
-          <div className="w-full h-48 flex items-center justify-center rounded-xl flex-col">
+          <div className="w-full flex items-center justify-center rounded-xl flex-col">
             <Image
               src={image ? URL.createObjectURL(image) : user?.profilePictureUrl || ""}
               alt="Profile Picture"
@@ -69,7 +69,7 @@ const ChangeProfilePictureModal: React.FC<ChangeProfilePictureModalProps> = ({ i
               height={56}
               className="object-contain rounded-full mb-4"
             />
-            <button onClick={() => document.getElementById('imageInput')?.click()} className="border border-black text-black rounded-xl font-medium px-4 py-2">
+            <button onClick={() => document.getElementById('imageInput')?.click()} className="border border-black text-black rounded-2xl font-medium px-4 py-2">
               Upload new picture
             </button>
           </div>
@@ -81,9 +81,9 @@ const ChangeProfilePictureModal: React.FC<ChangeProfilePictureModalProps> = ({ i
             onChange={handleImageChange}
           />
         </div>
-        <div className="flex flex-row justify-center text-black">
-          <button onClick={onClose} className="rounded-full mr-4 bg-[#F6F6F4] p-2">Cancel</button>
-          <button onClick={handleSubmit} className="rounded-full mr-4 bg-primary p-2">Save changes</button>
+        <div className="flex flex-row justify-end text-black">
+          <button onClick={onClose} className="rounded-full mr-4 font-medium bg-[#F6F6F4] py-2 px-4">Cancel</button>
+          <button onClick={handleSubmit} className="rounded-full font-medium bg-primary py-2 px-4">Save changes</button>
         </div>
       </div>
     </div>

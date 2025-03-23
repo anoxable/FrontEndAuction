@@ -88,11 +88,11 @@ const EditAuction: React.FC<EditAuctionProps> = ({ isOpen, onClose, auction }) =
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
-      <div className="bg-white p-4 rounded-lg w-full max-w-md">
-        <h2 className="text-2xl text-black font-bold mb-6 ">Edit auction</h2>
+      <div className="bg-white p-4 rounded-lg w-full max-w-xs">
+        <h2 className="text-2xl text-black font-bold mb-4 ">Edit auction</h2>
 
         {/* Form fields populated with auction data */}
-        <div className="mb-6 relative">
+        <div className="mb-4 relative">
           {image ? (
             <>
               <Image src={URL.createObjectURL(image)} alt="Preview" width={300} height={200} className="w-full h-48 object-cover rounded" />
@@ -179,7 +179,7 @@ const EditAuction: React.FC<EditAuctionProps> = ({ isOpen, onClose, auction }) =
           </div>
         </div>
 
-        <div className="flex justify-end space-x-4 mt-6 ">
+        <div className="flex justify-end space-x-4 mt-4 ">
           <button onClick={onClose} className="px-4 py-2 bg-color-red bg-gray-100 rounded-full text-sm font-medium text-gray-700 hover:bg-gray-50">
             Discard changes
           </button>

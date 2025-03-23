@@ -87,24 +87,24 @@ const CreateAuction: React.FC<CreateAuctionProps> = ({ isOpen, onClose, user }) 
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-10 bg-black bg-opacity-50 flex justify-center items-center">
-      <div className="bg-white p-8 rounded-lg w-full max-w-md">
+    <div className="fixed inset-0 z-10 bg-black bg-opacity-50 flex justify-center items-center leading-6">
+      <div className="bg-white p-4 rounded-2xl w-full max-w-xs">
         <h2 className="text-2xl text-black font-bold mb-6">Add auction</h2>
         
-        <div className="mb-6 relative">
+        <div className="mb-4 relative">
           {image ? (
             <>
-              <Image src={URL.createObjectURL(image)} alt="Preview" width={300} height={200} className="w-full h-48 object-cover rounded" />
+              <Image src={URL.createObjectURL(image)} alt="Preview" width={300} height={200} className="w-full h-48 object-cover rounded-2xl" />
               <button 
                 onClick={handleDeleteImage} 
-                className="absolute top-2 right-2 rounded-md p-1 shadow-md bg-black p-2"
+                className="absolute top-2 right-2 rounded-xl shadow-md bg-black p-2"
                 disabled={isSubmitting}
               >
                 <FaTrash className="text-white-500" />
               </button>
             </>
           ) : (
-            <div className="w-full h-48 bg-[#F6F6F4] flex items-center justify-center rounded-xl">
+            <div className="w-full h-48 bg-[#F6F6F4] flex items-center justify-center rounded-2xl">
               <button 
                 onClick={() => document.getElementById('imageInput')?.click()} 
                 className="border border-black text-black rounded-xl font-medium px-4 py-2"
@@ -124,8 +124,8 @@ const CreateAuction: React.FC<CreateAuctionProps> = ({ isOpen, onClose, user }) 
           />
         </div>
         
-        <div className="mb-4">
-          <label className="block text-sm font-medium text-gray-700">Title</label>
+        <div className="mb-2">
+          <label className="block text-sm font-light text-gray-700">Title</label>
           <input
             type="text"
             value={title}
@@ -150,7 +150,7 @@ const CreateAuction: React.FC<CreateAuctionProps> = ({ isOpen, onClose, user }) 
         
         <div className="flex mb-4 space-x-4">
           <div className="flex-1">
-            <label className="block text-sm font-medium text-gray-700 pb-2">Starting price</label>
+            <label className="block text-sm font-medium text-gray-700 pb-2 ">Starting price</label>
             <div className="mt-1 relative rounded-md shadow-sm">
               <div 
                 className="absolute inset-y-0 right-0 pr-3 flex items-center" 
@@ -186,7 +186,7 @@ const CreateAuction: React.FC<CreateAuctionProps> = ({ isOpen, onClose, user }) 
         <div className="flex justify-end space-x-4 mt-6">
           <button 
             onClick={onClose} 
-            className="px-4 py-2 bg-gray-100 rounded-full text-sm font-medium text-gray-700 hover:bg-gray-50"
+            className="px-4 py-2 bg-gray-100 rounded-2xl text-sm font-medium text-gray-700 hover:bg-gray-50"
             disabled={isSubmitting}
           >
             Cancel
@@ -194,7 +194,7 @@ const CreateAuction: React.FC<CreateAuctionProps> = ({ isOpen, onClose, user }) 
           <button 
             onClick={handleSubmit} 
             disabled={isSubmitting}
-            className="px-4 py-2 border border-transparent rounded-full shadow-sm text-sm font-medium text-black bg-primary flex items-center justify-center min-w-24"
+            className="px-4 py-2 border border-transparent rounded-2xl shadow-sm text-sm font-medium text-black bg-primary flex items-center justify-center min-w-24"
           >
             {isSubmitting ? (
               <>

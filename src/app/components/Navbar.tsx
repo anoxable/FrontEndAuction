@@ -107,8 +107,8 @@ const Navbar = () => {
   return (
     <nav className="flex justify-between items-center p-8 bg-gray-50 ">
       <div className="flex items-center space-x-4">
-        <div className="bg-primary rounded-full p-2">
-          <Image src={logo} alt="Logo" width={32} height={32} />
+        <div className="bg-primary rounded-full p-4 md:p-2">
+          <Image src={logo} alt="Logo" width={32} height={32}  className="md:w-8 md:h-8 w-6 sm:h-6"  />
         </div>
         <div className="flex items-center space-x-2 bg-white rounded-full">
           <button 
@@ -154,19 +154,19 @@ const Navbar = () => {
               className="fixed inset-0 bg-black bg-opacity-50 z-40"
               onClick={() => setIsProfileMenuOpen(false)}
             />
-            <div className="fixed flex flex-col text-center top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white shadow-lg rounded-xl p-6 z-50 min-w-[200px]">
+            <div className="fixed flex flex-col text-center top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white shadow-lg rounded-2xl p-6 z-50 min-w-[250px] m:min-w-[200px]">
               <button 
                 onClick={handleProfileSettings} 
-                className="w-full text-left text-black mb-4 py-2 px-4 hover:bg-gray-100 rounded-md transition-colors flex items-center"
+                className="w-full text-left text-black mb-4 py-2 px-6 hover:bg-gray-100 rounded-md transition-colors flex items-center"
               >
-                <GoGear className='mr-2' />
-                Profile Settings
+                <GoGear className='mr-2 ' />
+                <span className="inline font-medium">Profile Settings</span>
               </button>
               <button 
                 onClick={handleLogout} 
-                className="w-full text-left text-black py-2 px-4 hover:bg-gray-100 rounded-md transition-colors flex justify-center border border-black rounded-2xl"
+                className="w-full text-left text-black py-2 px-4 hover:bg-gray-100 rounded-xl font-medium transition-colors flex justify-center border border-black rounded-2xl"
               >
-                Log Out
+                Log out
               </button>
             </div>
           </>

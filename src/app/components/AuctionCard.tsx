@@ -58,7 +58,7 @@ const AuctionCard: React.FC<AuctionCardProps> = ({ auction, user, onDelete, onEd
     <div className="px-4 py-4">
       <div className="flex  justify-between text-gray-700 text-base">
       <p
-  className={`inline-block rounded-full px-2 py-1 text-sm text-gray-700 mr-2 mb-2
+  className={`inline-block rounded-full px-2 py-1 text-xs md:text-sm text-gray-700 mr-2 mb-2
     ${
       status === 'Winning'
         ? 'bg-green-500'  // Winning -> Green
@@ -79,7 +79,7 @@ const AuctionCard: React.FC<AuctionCardProps> = ({ auction, user, onDelete, onEd
       </div>
       <p className='text-black'>{auction.title}</p>
     </div>
-    <p className="rounded-full px-4 text-sm font-semibold text-gray-700 mb-2">{startingPrice ? `$${startingPrice}` : 'N/A'}</p>
+    <p className="rounded-full px-4 text-sm font-medium leading-6 text-gray-700 mb-2">{startingPrice ? `$${startingPrice}` : 'N/A'}</p>
     <div className={`px-4 pt-4 ${isEnded ? 'pb-4' : 'pb-1'} flex items-center justify-between relative ${isEnded ? 'h-40' : 'h-40'}`}>
       <Image 
         src={auction.image}
@@ -90,9 +90,9 @@ const AuctionCard: React.FC<AuctionCardProps> = ({ auction, user, onDelete, onEd
       />
     </div>
     {!isEnded && user?.id === auction.userId ? (
-      <div className="px-1 pb-1 flex items-center justify-between">
-        <button onClick={(e) => { e.stopPropagation(); onDelete?.(); }}  className="inline-block bg-white border border-black rounded-full px-3 py-2 text-sm font-semibold text-black hover:scale-110 transition-transform "><FaTrash className="" /></button>
-        <button onClick={(e) => { e.stopPropagation(); onEdit?.(); }}  className=" flex flex-row justify-center inline-block bg-gray-800 rounded-full px-3 py-2 text-sm font-semibold text-white flex-grow ml-2 "><FaEdit className=" flex self-center mr-2 font-light " /><span className='font-medium'> Edit</span></button>
+      <div className="px-1 pb-1 pt-2 flex items-center justify-between">
+        <button onClick={(e) => { e.stopPropagation(); onDelete?.(); }}  className="inline-block bg-white border border-black rounded-full px-3 py-2 text-sm font-semibold text-black hover:scale-110 transition-transform leading-6"><FaTrash className="" /></button>
+        <button onClick={(e) => { e.stopPropagation(); onEdit?.(); }}  className=" flex flex-row justify-center inline-block bg-gray-800 rounded-full px-3 py-2 text-sm font-semibold text-white flex-grow ml-2 leading-6 "><FaEdit className=" flex self-center mr-2 font-light " /><span className='font-medium'> Edit</span></button>
       </div>
     ) : null}
   </div>
