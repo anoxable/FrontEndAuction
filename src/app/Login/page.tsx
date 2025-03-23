@@ -12,6 +12,7 @@ export default function LoginPage() {
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleLogoClick = () => {
     router.push('/');
@@ -37,10 +38,11 @@ export default function LoginPage() {
         return;
       }
       
-      if (response) {
+      if (response.status === 201) {
         router.push('/dashboard/Profile');
       } else {
         console.error('Failed to login');
+        setError('Failed to login');
         setIsLoading(false);
       }
     } catch (error) {
@@ -77,7 +79,9 @@ export default function LoginPage() {
         <h1 className="text-3xl font-bold mb-2 text-black">Welcome back</h1>
         <p className="text-sm text-gray-600 mb-8">Please enter your details</p>
         </div>
-
+        {error && <div className='mb-4 bg-red-100 p-4 rounded-md w-3/4'>
+            <span className="text-red-500 font-medium block text-center"> {error}!</span>
+          </div>}
         <form className="w-full max-w-sm" onSubmit={handleLogin}>
           <div className="mb-4">
             <label htmlFor="email" className="block text-sm font-medium text-black mb-1">
@@ -119,7 +123,7 @@ export default function LoginPage() {
             </button>
           </div>
           </div>
-          <a href='http://localhost:3000/ForgotPassword' className='float-right mb-8 text-gray-600'>Forgot password?</a>
+          <a href={`${process.env.NEXT_PUBLIC_BACKEND_URL}/ForgotPassword`} className='float-right mb-8 text-gray-600'>Forgot password?</a>
           <button
             type="submit"
             disabled={isLoading}
@@ -127,15 +131,16 @@ export default function LoginPage() {
           >
             {isLoading ? (
               <>
-                <FaSpinner className="animate-spin mr-2" />
-                Logging in...
+              <FaSpinner className="animate-spin mr-2" />
+              Logging in...
               </>
             ) : (
               'Log in'
             )}
           </button>
+          
         </form>
-        <a href='http://localhost:3000/Register' className='text-black'>Don&apos;t have account? <strong>Sign up</strong></a>
+        <a href={`${process.env.NEXT_PUBLIC_BACKEND_URL}/Register`} className='text-black'>Don&apos;t have account? <strong>Sign up</strong></a>
       </div>
     </div>
   );

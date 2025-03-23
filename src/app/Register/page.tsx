@@ -32,7 +32,7 @@ export default function RegisterPage() {
     setIsLoading(true);
     
     try {
-      const response = await fetch('https://auctionbaybackend.onrender.com/users/signup', {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/users/signup`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -180,7 +180,7 @@ export default function RegisterPage() {
             )}
           </button>
         </form>
-        <a href='http://localhost:3000/Login' className='text-black'>Already have an account? <strong>Log in</strong></a>
+        <a href={`${process.env.NEXT_PUBLIC_BACKEND_URL}/Login`} className='text-black'>Already have an account? <strong>Log in</strong></a>
       </div>
     </div>
   );

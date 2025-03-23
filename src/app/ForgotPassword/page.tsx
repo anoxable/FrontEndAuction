@@ -103,7 +103,7 @@ export default function ForgotPasswordPage() {
             )}
           </button>
         </form>
-        <a href='http://localhost:3000/Login' className='mt-8 text-gray-600'>{'< '} Back to Login</a>
+        <a href={`${process.env.NEXT_PUBLIC_BACKEND_URL}/Login`} className='mt-8 text-gray-600'>{'< '} Back to Login</a>
       </div>
     </div>
   );
