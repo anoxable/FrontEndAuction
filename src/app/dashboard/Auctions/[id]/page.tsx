@@ -12,6 +12,7 @@ import { Auction } from '@/types/Auction';
 import TimeIcon from '../../../assets/Time.svg'
 import { fetchWithAuth } from '@/app/lib/auth';
 import AuctionSkeleton from '@/app/components/skeletons';
+import { refreshAccessToken } from '@/app/lib/refresh';
 
 export default function AuctionDetailPage() {
   const params = useParams();
@@ -27,6 +28,7 @@ export default function AuctionDetailPage() {
     const fetchUserData = async () => {
       setLoading(true);
       try {
+        await refreshAccessToken();
         const userResponse = await fetchWithAuth<{ user: User }>({
           url: `${process.env.NEXT_PUBLIC_BACKEND_URL}/auth/me`, 
           method: 'GET', 
