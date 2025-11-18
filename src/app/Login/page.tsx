@@ -123,7 +123,7 @@ export default function LoginPage() {
             </button>
           </div>
           </div>
-          <a href={`${process.env.NEXT_PUBLIC_BACKEND_URL}/ForgotPassword`} className='float-right mb-8 text-gray-600'>Forgot password?</a>
+          <a href='/ForgotPassword' className='float-right mb-8 text-gray-600'>Forgot password?</a>
           <button
             type="submit"
             disabled={isLoading}
@@ -140,7 +140,7 @@ export default function LoginPage() {
           </button>
           
         </form>
-        <a href={`${process.env.NEXT_PUBLIC_BACKEND_URL}/Register`} className='text-black'>Don&apos;t have account? <strong>Sign up</strong></a>
+        <a href='/Register' className='text-black'>Don&apos;t have account? <strong>Sign up</strong></a>
       </div>
     </div>
   );
